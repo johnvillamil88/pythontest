@@ -16,17 +16,17 @@ jobs:
     - name: Iniciar Docker Build y Push
       uses: azure/docker-login@v1
       with:
-        login-server: contenedor.azurecr.io
+        login-server: pythontestcr.azurecr.io
         username: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
         password: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
 
     - name: Construir y etiquetar la imagen Docker
       run: |
-        docker build -t contenedor.azurecr.io/nombre-de-tu-imagen:$GITHUB_RUN_NUMBER .
-        docker push contenedor.azurecr.io/nombre-de-tu-imagen:$GITHUB_RUN_NUMBER
+        docker build -t pythontestcr.azurecr.io/pythonapp:$GITHUB_RUN_NUMBER .
+        docker push pythontestcr.azurecr.io/pythonapp:$GITHUB_RUN_NUMBER
 
     - name: Desplegar en Azure App Service
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'nombre-de-tu-aplicacion-en-azure'
-        images: 'contenedor.azurecr.io/nombre-de-tu-imagen:$GITHUB_RUN_NUMBER'
+        images: 'pythontestcr.azurecr.io/pythonapp:$GITHUB_RUN_NUMBER'

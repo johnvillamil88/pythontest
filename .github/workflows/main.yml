@@ -33,12 +33,12 @@ jobs:
 
     - name: Construir y etiquetar la imagen Docker
       run: |
-        docker build -t pythontestcr.azurecr.io/pythonapp:$GITHUB_RUN_NUMBER .
-        docker push pythontestcr.azurecr.io/pythonapp:$GITHUB_RUN_NUMBER
+        docker build -t pythontestcr.azurecr.io/pythonapp .
+        docker push pythontestcr.azurecr.io/pythonapp
 
     - name: Desplegar en Azure App Service
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'MyAppPython1'
-        images: 'pythontestcr.azurecr.io/pythonapp:$GITHUB_RUN_NUMBER'
+        images: 'pythontestcr.azurecr.io/pythonapp'
 

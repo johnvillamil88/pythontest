@@ -39,7 +39,7 @@ jobs:
     - name: Desplegar en Azure App Service
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'myApp'
+        app-name: 'myAppPythonTest'
         images: 'pythontestcr.azurecr.io/pythonapp:$GITHUB_RUN_NUMBER'
 
 

@@ -42,3 +42,4 @@ jobs:
         app-name: 'MyAppPython1'
         images: 'pythontestcr.azurecr.io/pythonapp'
 
+

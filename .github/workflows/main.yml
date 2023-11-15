@@ -21,7 +21,7 @@ jobs:
 
 
     - name: Iniciar sesión en Azure
-      run: az login --service-principal --username 93629ff0-028a-430f-ad9f-5ad152ebf0db --password Waa8Q~6Uej1VIBFJ2IN-HWwC2TOzqJyDE_iTWaBp --tenant c160a942-c869-429f-8a96-f8c8296d57db
+      run: az login --service-principal --username ${{ secrets.APP_ID }} --password ${{ secrets.PASSWORD }} --tenant ${{ secrets.TENANT }}
 
 
     - name: Iniciar Docker Build y Push

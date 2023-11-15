@@ -13,6 +13,11 @@ jobs:
     - name: Checkout Repositorio
       uses: actions/checkout@v2
 
+    - name: Iniciar sesión en Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
     - name: Iniciar Docker Build y Push
       uses: azure/docker-login@v1
       with:

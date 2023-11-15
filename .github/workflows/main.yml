@@ -43,4 +43,3 @@ jobs:
       with:
         app-name: 'nombre-de-tu-aplicacion-en-azure'
         images: 'pythontestcr.azurecr.io/pythonapp:$GITHUB_RUN_NUMBER'
-
